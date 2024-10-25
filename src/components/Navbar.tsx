@@ -1,9 +1,16 @@
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
+import { Abril_Fatface } from "next/font/google";
+
+const ShadowsIntoLight = Abril_Fatface({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const Navbar = () => {
   return (
-    <nav className="py-4">
+    <nav className="py-4 fixed w-full px-52 top-0 backdrop-blur-sm left-0 ">
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
           <svg
@@ -20,23 +27,83 @@ const Navbar = () => {
               fill="#fdc500"
             />
           </svg>
-          <h1 className="text-3xl text-[#00509d] font-bold">festiva</h1>
+          <h1
+            className={`${ShadowsIntoLight.className} text-3xl text-[#00509d] font-bold`}
+          >
+            festiva
+          </h1>
         </div>
-        <div className="flex gap-3">
-          {" "}
-          <Button
-            className="px-6 py-6 bg-[#00509d] text-[#fff] hover:bg-[#fff] hover:text-[#00509d] transition-colors duration-300 ease-in-out"
-            variant={"event"}
+        <div className="flex gap-5">
+          <Link
+            href="/create-event"
+            className="relative inline-flex items-center px-12 py- overflow-hidden text-lg font-medium text-[#00509d] border-2 border-[#00509d] rounded-full hover:text-white group hover:bg-gray-50"
           >
-            Create Event
-          </Button>{" "}
-          <Button
-            className="px-6 py-6 hover:scale-105 transform transition duration-300 ease-in-out
+            <span className="absolute left-0 block w-full h-0 transition-all bg-[#00509d] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 1V21"
+                  stroke="#fff"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1 10.9336H21"
+                  stroke="#fff"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span className="relative font-medium">Create event</span>
+          </Link>{" "}
+          {/* <Link
+            href="/create-event"
+            className="relative items-center justify-center inline-block text-lg px-6 py-3 overflow-hidden text-[#fdc500] font-medium rounded-full group"
+          >
+            <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-[#1a659e] rounded-full blur-md ease"></span>
+            <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+              <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-[#001d3d] rounded-full blur-md"></span>
+              <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-[#00f5d4] rounded-full blur-md"></span>
+            </span>
+            <span className="relative text-white"> Create Event</span>
+          </Link> */}
+          {/* <Button
+              className="px-6 py-6 bg-[#00509d] text-[#fff] hover:bg-[#fff] hover:text-[#00509d] transition-colors duration-300 ease-in-out "
+              variant={"event"}
+            >
+              Create Event
+            </Button>{" "} */}
+          <Link href="/help">
+            <Button
+              className="px-6 py-6 font-extralight hover:scale-105 transform transition duration-300 ease-in-out
  "
-            variant={"event"}
-          >
-            help
-          </Button>{" "}
+              variant={"event"}
+            >
+              <svg
+                width="100"
+                height="100"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 5V1H7V5L4.5 7.5L8.5 11.5L11 9H15V15H11C5.47715 15 1 10.5228 1 5Z"
+                  fill="#00509d"
+                />
+              </svg>
+              help
+            </Button>{" "}
+          </Link>
+          {/* <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#00296b] from-10% via-[#003f88] via-30% via-[#00509d] via-20% to-emerald-500 to-70%"></div> */}
         </div>
       </div>
     </nav>
