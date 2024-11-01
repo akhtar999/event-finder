@@ -1,0 +1,44 @@
+{
+    "categories": [
+        {
+            "label": "Today",
+            "value": "today"
+        },
+        {
+            "label": "This Weekend",
+            "value": "this_weekend"
+        },
+        {
+            "label": "Next Week",
+            "value": "next_week"
+        },
+        {
+            "label": "Art",
+            "value": "art"
+        },
+        {
+            "label": "Music",
+            "value": "music"
+        },
+        {
+            "label": "Movies",
+            "value": "movies"
+        },
+        {
+            "label": "Sports",
+            "value": "sports"
+        },
+        {
+            "label": "Shopping",
+            "value": "shopping"
+        },
+        {
+            "label": "Restaurants",
+            "value": "restaurants"
+        },
+        {
+            "label": "Party",
+            "value": "party"
+        }
+    ]
+}

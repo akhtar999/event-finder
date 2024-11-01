@@ -1,7 +1,16 @@
 import React from "react";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import { Abril_Fatface } from "next/font/google";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { useTheme } from "next-themes";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const ShadowsIntoLight = Abril_Fatface({
   subsets: ["latin"],
@@ -9,8 +18,9 @@ const ShadowsIntoLight = Abril_Fatface({
 });
 
 const Navbar = () => {
+  const { setTheme } = useTheme();
   return (
-    <nav className="py-4 fixed w-full px-52 top-0 backdrop-blur-sm left-0 ">
+    <nav className="py-2 fixed w-full px-44 top-0 backdrop-blur-lg left-0 z-50 mt-4 ">
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
           <svg
@@ -33,10 +43,11 @@ const Navbar = () => {
             festiva
           </h1>
         </div>
-        <div className="flex gap-5">
+        <div className="flex items-center gap-5">
+          {/* ------------------------------CREATE EVENT BUTTON------------------------------------- */}
           <Link
             href="/create-event"
-            className="relative inline-flex items-center px-12 py- overflow-hidden text-lg font-medium text-[#00509d] border-2 border-[#00509d] rounded-full hover:text-white group hover:bg-gray-50"
+            className="relative bg-[#ffffff8a] inline-flex items-center px-12 py-[10px] overflow-hidden text-lg font-medium text-[#00509d] border-2 border-[#00509d] rounded-full hover:text-white group hover:bg-gray-50"
           >
             <span className="absolute left-0 block w-full h-0 transition-all bg-[#00509d] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
             <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -65,26 +76,10 @@ const Navbar = () => {
             </span>
             <span className="relative font-medium">Create event</span>
           </Link>{" "}
-          {/* <Link
-            href="/create-event"
-            className="relative items-center justify-center inline-block text-lg px-6 py-3 overflow-hidden text-[#fdc500] font-medium rounded-full group"
-          >
-            <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-[#1a659e] rounded-full blur-md ease"></span>
-            <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
-              <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-[#001d3d] rounded-full blur-md"></span>
-              <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-[#00f5d4] rounded-full blur-md"></span>
-            </span>
-            <span className="relative text-white"> Create Event</span>
-          </Link> */}
-          {/* <Button
-              className="px-6 py-6 bg-[#00509d] text-[#fff] hover:bg-[#fff] hover:text-[#00509d] transition-colors duration-300 ease-in-out "
-              variant={"event"}
-            >
-              Create Event
-            </Button>{" "} */}
+          {/* -------------------------HELP BUTTON------------------------------------------- */}
           <Link href="/help">
             <Button
-              className="px-6 py-6 font-extralight hover:scale-105 transform transition duration-300 ease-in-out
+              className="px-6 bg-[#ffffff8a] py-6 font-extralight hover:scale-105 transform transition duration-300 ease-in-out
  "
               variant={"event"}
             >
@@ -104,6 +99,27 @@ const Navbar = () => {
             </Button>{" "}
           </Link>
           {/* <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#00296b] from-10% via-[#003f88] via-30% via-[#00509d] via-20% to-emerald-500 to-70%"></div> */}
+          {/*------------------------------- DARK MODE---------------------------------------- */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center" asChild>
+              <Button className="" variant="link">
+                <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("system")}>
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>

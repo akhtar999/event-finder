@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "title": "The Future of Work",
+        "date": "Thu, Sep 12",
+        "time": "9:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Folsom Street Fair",
+        "date": "Sun, Sep 15",
+        "time": "12:00 PM",
+        "image": "/image2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "SFMOMA Free Day",
+        "date": "Sat, Sep 21",
+        "time": "10:00 AM",
+        "image": "/image3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Wine Tasting at Napa Valley",
+        "date": "Fri, Sep 27",
+        "time": "6:00 PM",
+        "image": "/image4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "SF Pride Parade",
+        "date": "Wed, Oct 2",
+        "time": "3:00 PM",
+        "image": "/image5.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Beyonce Concert at Oracle",
+        "date": "Sat, Oct 5",
+        "time": "8:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Startup Pitch Night",
+        "date": "Tue, Oct 10",
+        "time": "5:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Golden Gate Bridge Tour",
+        "date": "Sun, Oct 13",
+        "time": "11:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Tech Meetup",
+        "date": "Wed, Oct 16",
+        "time": "6:30 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Halloween Costume Party",
+        "date": "Thu, Oct 31",
+        "time": "9:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Yoga at Golden Gate Park",
+        "date": "Sat, Nov 2",
+        "time": "7:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 12,
+        "title": "Wine & Cheese Tasting",
+        "date": "Fri, Nov 8",
+        "time": "5:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 13,
+        "title": "Coding Bootcamp Workshop",
+        "date": "Mon, Nov 11",
+        "time": "10:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 14,
+        "title": "San Francisco Art Walk",
+        "date": "Sun, Nov 17",
+        "time": "4:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 15,
+        "title": "Thanksgiving Dinner",
+        "date": "Thu, Nov 28",
+        "time": "6:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 16,
+        "title": "Black Friday Shopping Spree",
+        "date": "Fri, Nov 29",
+        "time": "12:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 17,
+        "title": "Christmas Tree Lighting",
+        "date": "Sat, Dec 7",
+        "time": "5:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 18,
+        "title": "SF Symphony Concert",
+        "date": "Thu, Dec 12",
+        "time": "7:30 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 19,
+        "title": "New Year's Eve Bash",
+        "date": "Tue, Dec 31",
+        "time": "9:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 20,
+        "title": "SF Marathon",
+        "date": "Sun, Jan 5",
+        "time": "7:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 21,
+        "title": "Film Festival Screening",
+        "date": "Wed, Jan 15",
+        "time": "8:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 22,
+        "title": "Chinese New Year Parade",
+        "date": "Sat, Feb 8",
+        "time": "5:30 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 23,
+        "title": "Valentine's Day Dinner",
+        "date": "Fri, Feb 14",
+        "time": "7:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 24,
+        "title": "Spring Art Festival",
+        "date": "Sat, Mar 21",
+        "time": "11:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 25,
+        "title": "Easter Egg Hunt",
+        "date": "Sun, Apr 12",
+        "time": "10:00 AM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 26,
+        "title": "Cinco de Mayo Celebration",
+        "date": "Tue, May 5",
+        "time": "3:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 27,
+        "title": "SF Jazz Fest",
+        "date": "Sat, May 16",
+        "time": "7:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 28,
+        "title": "Pride Celebration",
+        "date": "Sun, Jun 28",
+        "time": "12:00 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 29,
+        "title": "Fourth of July Fireworks",
+        "date": "Sat, Jul 4",
+        "time": "9:30 PM",
+        "image": "/image1.jpg"
+    },
+    {
+        "id": 30,
+        "title": "Food Truck Festival",
+        "date": "Sat, Aug 15",
+        "time": "12:00 PM",
+        "image": "/image1.jpg"
+    }
+]

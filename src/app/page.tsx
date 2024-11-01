@@ -1,8 +1,33 @@
+"use client";
 import Navbar from "@/components/Navbar";
-// import { Input } from "@/components/ui/input";
-import React from "react";
+import EventCard from "@/components/EventCard";
+import Category from "@/components/Category";
+import SearchEvent from "@/components/SearchEvent";
+import eventsData from "@/data/events.json";
+import { useState } from "react";
 
 const Home = () => {
+  const itemsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(eventsData.length / itemsPerPage);
+
+  // Get events to display for current page
+  const currentEvents = eventsData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  // Pagination handlers
+  const goToNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
     <main className="">
       {/* NAVBAR */}
@@ -13,27 +38,72 @@ const Home = () => {
         </h1>
 
         {/* EVENT SEARCH BAR */}
-        <div className="relative mt-5">
-          <input
-            type="text"
-            className="w-full text-xl placeholder:text-slate-400 text-slate-700 border border-slate-200 rounded-[50px] pl-6 pr-10 py-3 transition duration-300 ease focus:outline-none hover:border-slate-300 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
-            placeholder="Search for events"
-          />
+        <SearchEvent />
+
+        {/* CATEGORY FILTERS */}
+        <Category />
+
+        {/* EVENT CARDS */}
+        <div className="mt-8">
+          <EventCard events={currentEvents} />
+        </div>
+
+        {/* PAGINATION CONTROLS */}
+        <div className="flex items-center justify-end mt-8 gap-8">
           <button
-            className="absolute right-1 top-1 rounded-[50px] bg-[#fdc500] p-1.5 border border-transparent text-center text-sm text-white transition-all focus:bg-slate-700 focus:shadow-none active:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            className={`p-3 rounded-full transition duration-200 ease-in-out ${
+              currentPage === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#4ca2f3] text-white"
+            }`}
           >
             <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="w-40 h-8"
             >
-              <path
-                fill-rule="evenodd"
-                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                clip-rule="evenodd"
+              <polyline
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                points="7 2 17 12 7 22"
+                transform="matrix(-1 0 0 1 24 0)"
               />
+            </svg>
+          </button>
+          <span className="text-lg">
+            <span className="text-[#4ca2f3] mr-2">
+              {currentPage}
+            </span>
+            {"  "}
+            of {totalPages}
+          </span>
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className={`p-3 rounded-full transition duration-200 ease-in-out ${
+              currentPage === totalPages
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#4ca2f3] text-white"
+            }`}
+          >
+            <svg
+              fill="#fff"
+              height="20"
+              width="20"
+              version="1.1"
+              id="XMLID_287_"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g id="next">
+                <g>
+                  <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 		" />
+                </g>
+              </g>
             </svg>
           </button>
         </div>
